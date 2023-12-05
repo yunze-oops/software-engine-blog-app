@@ -1,0 +1,21 @@
+
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+
+<p>
+    <strong>Time:</strong>
+    <%= time_ago_in_words(comment.created_at) %> ago
+</p>
+
+<p>
+  <%= button_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
